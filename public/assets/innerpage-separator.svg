@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="238.672" viewBox="0 0 1920 238.672">
+  <g id="Group_35" data-name="Group 35" transform="translate(0 -4099)">
+    <g id="InfoBottomSeparator" transform="translate(0 4212)">
+      <path id="SeparatorShadow" d="M1920,480H0v18L1920,600.671Z" transform="translate(0 -475)" opacity="0.2"/>
+      <path id="IntroBottomSeparator" d="M1920,480H0v18L1920,600.671Z" transform="translate(0 -480)" fill="#fff"/>
+    </g>
+    <g id="BannersBottomSeparator" transform="translate(0 4089)">
+      <path id="SeparatorShadow-2" data-name="SeparatorShadow" d="M0,600.671H1920v-18L0,490Z" transform="translate(0 -480)" opacity="0.2"/>
+      <path id="IntroBottomSeparator-2" data-name="IntroBottomSeparator" d="M0,600.671H1920v-18L0,490Z" transform="translate(0 -475)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

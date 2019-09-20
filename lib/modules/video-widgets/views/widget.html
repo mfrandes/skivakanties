@@ -1,0 +1,13 @@
+<div class="wrapper">
+    <div class="top-container">
+        <div class="video-container-fixed">
+            <iframe id="video" height="100%" width="100%" allowfullscreen="allowfullscreen"
+                mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen"
+                oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen"
+                src="{{data.widget.video}}" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope;"></iframe>
+        </div>
+    </div>
+    {% set image = apos.images.first(data.widget.image) %}
+    <div class="header-image" style="background-image: url({{ apos.attachments.url(image, { size: 'max' }) }})"></div>
+</div>

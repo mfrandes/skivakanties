@@ -1,0 +1,72 @@
+
+<div class="products-list">
+{% for piece in data.widget._pieces %}
+
+{% set background = apos.images.first(piece.background) %}
+{% set star = apos.images.first(piece.starIcon) %}
+
+
+
+<div class="product" style="background-image: url({{ apos.attachments.url(background, { size: 'max' }) }})">
+    <div class="price">
+        <div class="wrapper">
+            <p class="type">{{piece.priceDetails}}</p>
+            <h2 class="amount">{{piece.price}} {{piece.currency}}</h2>
+        </div>
+    </div>
+    <div class="information">
+        <div class="name">
+            <h2>{{piece.pretyTitle}}</h2>
+            <div class="stars">
+
+                    {% if piece.select == 1 %}
+                <img src="{{ apos.attachments.url(star, { size: 'max' }) }}">
+
+                    {% elseif piece.select == 2 %}
+                <img src="{{ apos.attachments.url(star, { size: 'max' }) }}">
+                <img src="{{ apos.attachments.url(star, { size: 'max' }) }}">
+
+                {% elseif piece.select == 3 %}
+                <img src="{{ apos.attachments.url(star, { size: 'max' }) }}">
+                <img src="{{ apos.attachments.url(star, { size: 'max' }) }}">
+                <img src="{{ apos.attachments.url(star, { size: 'max' }) }}">
+                {% elseif piece.select == 4 %}
+                <img src="{{ apos.attachments.url(star, { size: 'max' }) }}">
+                <img src="{{ apos.attachments.url(star, { size: 'max' }) }}">
+                <img src="{{ apos.attachments.url(star, { size: 'max' }) }}">
+                <img src="{{ apos.attachments.url(star, { size: 'max' }) }}">
+
+
+                {% elseif piece.select == 5 %}
+                <img src="{{ apos.attachments.url(star, { size: 'max' }) }}">
+                <img src="{{ apos.attachments.url(star, { size: 'max' }) }}">
+                <img src="{{ apos.attachments.url(star, { size: 'max' }) }}">
+                <img src="{{ apos.attachments.url(star, { size: 'max' }) }}">
+                <img src="{{ apos.attachments.url(star, { size: 'max' }) }}">
+
+
+                {% elseif piece.select == 6 %}
+                <img src="{{ apos.attachments.url(star, { size: 'max' }) }}">
+                <img src="{{ apos.attachments.url(star, { size: 'max' }) }}">
+                <img src="{{ apos.attachments.url(star, { size: 'max' }) }}">
+                <img src="{{ apos.attachments.url(star, { size: 'max' }) }}">
+                <img src="{{ apos.attachments.url(star, { size: 'max' }) }}">
+                <img src="{{ apos.attachments.url(star, { size: 'max' }) }}">
+
+                {% endif %}
+
+               
+            </div>
+        </div>
+        <div class="details">
+            <div class="wrapper">
+                <span class="location"><img src="assets/pin.svg">{{piece.location}}</span>
+                <span class="period"><img src="assets/calendar.svg">{{piece.inDate | date('DD-MM-YYYY')}} - {{piece.outDate | date('DD-MM-YYYY')}}</span>
+                <span class="nights"> {{ piece.days }} nachten</span>
+            </div>
+            <p class="address">{{piece.city}} &#9679; {{piece.address}}</p>
+        </div>
+    </div>
+</div>
+{% endfor %}
+</div>

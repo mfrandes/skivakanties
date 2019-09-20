@@ -2,40 +2,58 @@
 {% extends data.outerLayout %}
 
 {% block title %}
-  {# Create a useful, SEO-friendly title tag based on what we have #}
-  {% if data.piece %}
-    {{ data.piece.title }}
-  {% elseif data.page %}
-    {{ data.page.title }}
-  {% else %}
-    {{ apos.log('Looks like you forgot to override the title block in a template that does not have access to an Apostrophe page or piece.') }}
-  {% endif %}
+{# Create a useful, SEO-friendly title tag based on what we have #}
+{% if data.piece %}
+{{ data.piece.title }}
+{% elseif data.page %}
+{{ data.page.title }}
+{% else %}
+{{ apos.log('Looks like you forgot to override the title block in a template that does not have access to an Apostrophe page or piece.') }}
+{% endif %}
 {% endblock %}
 
 {% block extraHead %}
-  {#
-    This block outputs its contents in the HTML document's <head>.
-    It is a good place to put extra <script> <link> and <meta> tags.
-  #}
 {% endblock %}
 
 {% block beforeMain %}
-  {#
-    We recommend you use the beforeMain block for global page components
-    like headers or navigation.
-  #}
+<div class="header">
+  {{ 
+    apos.area(data.page, 'video', {
+      widgets:{
+        video: {}      
+        }
+    })
+  }}
+  <div class="header-separator">
+    <img class="separator" src="/assets/header-separator.svg">
+    <img class="skis" src="/assets/Skis.svg">
+  </div>
+  <div class="overlay"></div>
+</div>
 {% endblock %}
 
 {% block main %}
-  {#
-    Usually, your page templates in the apostrophe-pages module will override
-    this block. It is safe to assume this is where your page-specific content
-    should go.
-  #}
+
 {% endblock %}
 
 {% block afterMain %}
-  {#
-    This would be a great place to put a global footer.
-  #}
+
+<div class="details-container">
+  <div class="details-top-separator">
+    <img src="assets/BannersBottomSeparator.svg">
+  </div>
+  {{ 
+      apos.area(data.global, 'details', {
+        widgets:{
+          details: {}      
+          }
+      })
+    }}
+  <div class="details-bottom-separator">
+    <img src="assets/InfoBottomSeparator.svg">
+  </div>
+</div>
+
+{{ apos.singleton(data.global, 'footer', 'footer') }}
+
 {% endblock %}

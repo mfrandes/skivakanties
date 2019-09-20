@@ -1,0 +1,29 @@
+<div class="wrapper">
+    <div class="text-container">
+
+        {% if data.widget.blueTree %}
+        {% set blueTree = apos.images.first(data.widget.blueTree) %}
+        <img src="{{ apos.attachments.url(blueTree, { size: 'max' }) }}" class="category-img">
+        <div>
+            <h2 class="title">{{data.widget.title}}</h2>
+            <p>{{data.widget.paragraph}}</p>
+        </div>
+        {% else %}
+
+        <h2 class="title">
+            <p>{{data.widget.title}}</p>
+        </h2>
+        <p>{{data.widget.paragraph}}</p>
+        {% endif %}
+
+    </div>
+
+    {% set snowflake = apos.images.first(data.widget.snowflake) %}
+    {% set snowFriends = apos.images.first(data.widget.snowFriends) %}
+    {% set se7en = apos.images.first(data.widget.se7en) %}
+    <img class="snowflake" src="{{ apos.attachments.url(snowflake, { size: 'max' }) }}">
+    <div class="logos">
+        <img src="{{ apos.attachments.url(snowFriends, { size: 'max' }) }}">
+        <img src="{{ apos.attachments.url(se7en, { size: 'max' }) }}">
+    </div>
+</div>

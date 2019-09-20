@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block extraHead %}
+<link href="/css/reset.css" rel="stylesheet">
+<link href="/css/global.css" rel="stylesheet">
+<link href="css/innerPage.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% endblock %}
+
+{% block main %}
+
+<body>
+    <div class="info-container">
+        {{ 
+          apos.area(data.page, 'textAndLogo', {
+            widgets:{
+              description: {}      
+              }
+          })
+        }}
+    </div>
+    <div class="intro-bottom-separator">
+        <img src="assets/IntroBottomSeparator.svg">
+    </div>
+
+    <div class="products-list-container">
+
+
+        {{ apos.area(data.page, 'area', {
+                widgets:{
+                  area: {} 
+                  
+                }  
+        }) }}
+
+
+
+    </div>
+
+    {% endblock %}

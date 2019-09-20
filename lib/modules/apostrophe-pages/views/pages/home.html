@@ -5,13 +5,49 @@
 
 {% extends "layout.html" %}
 
+{% block extraHead %}
+<link href="/css/reset.css" rel="stylesheet">
+<link href="/css/global.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% endblock %}
+
 {% block main %}
-  <div class="main-content">
-    <h3>Hello world!
-      {% if not data.user %}
-        <a class="login-link" href="{{ apos.prefix }}/login">Login</a>
-      {% endif %}
-    </h3>
-    <p>This is a very bare bones Apostrophe project. Now, get to work and make a real website!</p>
+
+<body>
+
+
+
+  <div class="info-container">
+    
+      {{ 
+          apos.area(data.page, 'textAndLogo', {
+            widgets:{
+              description: {}      
+              }
+          })
+        }}
+     
+    
   </div>
+
+  <div class="intro-bottom-separator">
+    <img src="assets/IntroBottomSeparator.svg">
+  </div>
+
+  <div class="products-container">
+    
+      {{ 
+        apos.singleton(data.page, 'offerts', {
+          widgets:{
+            offert: {}      
+            }
+        })
+      }}
+
+    
+  </div>
+
+  
+
+</body>
 {% endblock %}

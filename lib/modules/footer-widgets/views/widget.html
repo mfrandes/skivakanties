@@ -1,0 +1,23 @@
+<div class="bottom-image-container">
+        {% set backgroundImg = apos.images.first(data.widget.backgroundImg) %}
+        {% set smi1 = apos.images.first(data.widget.smi1) %}
+        {% set smi2 = apos.images.first(data.widget.smi2) %}
+
+        <div class="bottom-image" style="background-image: url({{ apos.attachments.url(backgroundImg, { size: 'max' }) }})"></div>
+    </div>
+    <div class="footer-container">
+        <div class="footer-wrapper">
+            <div class="footer-text">
+                <h2>{{data.widget.title}}</h2>
+                <p>{{data.widget.paragraph}}</p>
+            </div>
+            <div class="footer-social">
+                <a href="#">
+                    <img src="{{ apos.attachments.url(smi1, { size: 'max' }) }}">
+                </a>
+                <a href="#">
+                    <img src="{{ apos.attachments.url(smi2, { size: 'max' }) }}">
+                </a>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,20 @@
+<div class="details-wrapper">
+    <div class="details-text">
+        <h2>
+            <p>{{data.widget.title}}</p>
+        </h2>
+        {{ apos.area(data.widget, 'details',{
+            widgets: {
+                'apostrophe-rich-text': {
+                    toolbar: [ 'Styles', 'Bold', 'Italic','Link', 'Unlink', 'Anchor', 'Table', 'BulletedList', 'Blockquote', 'Strike', 'Subscript', 'Superscript', 'Split' ],
+                    styles: [
+                      {name: 'Description', element: 'p'}
+                    ]
+                }
+            } }) }}
+
+    </div>
+    {% set logo = apos.images.first(data.widget.icon) %}
+
+    <img class="snowflake" src="{{ apos.attachments.url(logo, { size: 'max' }) }}">
+</div>

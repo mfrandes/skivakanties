@@ -1,0 +1,14 @@
+{% set background = apos.images.first(data.widget.picture) %}
+{% set logo = apos.images.first(data.widget.icon) %}
+
+<div class="product-container" style="background-image: url({{ apos.attachments.url(background, { size: 'max' }) }})">
+    <div class="product-details-container">
+        <img src="{{ apos.attachments.url(logo, { size: 'max' }) }}">
+        <div class="text-container">
+            <h2>{{data.widget.title}}</h2>
+            <p>{{ data.widget.paragraph}}</p>
+        </div>
+
+        <a href="{{data.widget.url}}">{{data.widget.label}}</a>
+    </div>
+</div>
